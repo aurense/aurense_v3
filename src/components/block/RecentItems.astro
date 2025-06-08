@@ -35,6 +35,20 @@ if (page_type === "noticias") {
         post_tag.some((t) => post.data?.tag && post.data.tag.includes(t)),
     );
 }
+
+if (page_type === "lugares") {
+  base_url = import.meta.env.PORTFOLIO_SLUG;
+  posts = (await getCollection("lugares")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  if (portfolio_tag && portfolio_tag.length > 0)
+    posts = posts.filter(
+      (post) =>
+        post.data?.tag &&
+        portfolio_tag.some((t) => post.data?.tag && post.data.tag.includes(t)),
+    );
+}
+
 if (page_type === "blog") {
   base_url = import.meta.env.BLOG_SLUG;
   posts = (await getCollection("blog")).sort(
@@ -74,7 +88,7 @@ if (count && count > 0) posts = posts.slice(0, count);
 const sizes = getGridImageSizes(container);
 ---
 
-<Intersecting client:visible className="w-full">
+<Intersecting noSsr={true} client:visible className="w-full">
   <div
     class={`recent-blogs grid gap-8 fade-up container-${container || "md"} `}
   >

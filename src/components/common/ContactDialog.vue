@@ -36,7 +36,7 @@
                     @click="showPopper = !showPopper"
                     class="select surface-overlay w-full text-left"
                   >
-                    {{ !!topic ? topic : "Select" }}
+                    {{ !!topic ? topic : "Elige" }}
                   </button>
 
                   <template #content>
@@ -78,7 +78,7 @@
                 />
                 <label
                   class="peer-placeholder-shown:left-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-9 peer-focus:scale-75 peer-focus:text-primary"
-                  >{{ t("name") }} *</label
+                  >Nombre *</label
                 >
               </div>
 
@@ -105,7 +105,7 @@
                 />
                 <label
                   class="peer-placeholder-shown:left-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-9 peer-focus:scale-75 peer-focus:text-primary"
-                  >{{ t("phone") }}</label
+                  >Teléfono *</label
                 >
               </div>
               <div class="input-group">
@@ -121,7 +121,7 @@
                 ></textarea>
                 <label
                   class="peer-placeholder-shown:left-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-9 peer-focus:scale-75 peer-focus:text-primary"
-                  >Message *</label
+                  >Mensaje *</label
                 >
               </div>
               <div
@@ -131,8 +131,7 @@
                   class="btn surface-primary pointer-events-auto"
                   type="submit"
                   :disabled="!canSubmit"
-                >
-                  {{ t("submit") }}
+                >Enviar
                 </button>
               </div>
               <Loading :loading="loading" />
@@ -235,11 +234,11 @@ const mailData = computed(() => {
     topicChannel: topicChannel.value,
     topicEmail: topicEmail.value,
     message: `
-Topic:  ${topic.value}\r\n
-Name: ${form.name}\r\n
-Phone: ${form.phone}\r\n
+Asunto:  ${topic.value}\r\n
+Nombre: ${form.name}\r\n
+Telefono: ${form.phone}\r\n
 Email: ${form.email}\r\n
-Message: \r\n${form.message}\r\n           `,
+Mensaje: \r\n${form.message}\r\n           `,
   };
 });
 

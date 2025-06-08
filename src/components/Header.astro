@@ -6,6 +6,7 @@ import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
 import ColorSwitch from "@components/common/ColorSwitch.vue";
 import { t } from "@util/translate";
+import logo from "@icons/aurense.com-logo-horizontal-v02.svg";
 
 const { menu, title, social } = Astro.props;
 const currentPath = Astro.url.pathname.split("/")[1];
@@ -22,7 +23,7 @@ const isActive = (href) => {
       href="/"
       aria-label={title}
       class="grid place-items-center py-3 text-primary"
-      ><Icon name="logo" class="h-6" /></a
+      ><img src={logo.src} class="h-8" /><!-- <Icon name="aurense.com-logo-horizontal-v02.svg" class="h-6" /> --></a
     >
     {
       menu && (
@@ -41,7 +42,7 @@ const isActive = (href) => {
     {
       (
         <ul class="nav-underline relative -mr-4  ml-auto flex flex-nowrap justify-end pl-4 uppercase md:mr-0">
-          <li>
+           {/* <li>
             <CartButton
               label={t("cart")}
               client:idle
@@ -49,8 +50,8 @@ const isActive = (href) => {
               transition:name="cart"
             >
               <Icon name="shopping-cart" class="h-6 w-6" />
-            </CartButton>
-          </li>
+            </CartButton> 
+          </li> */}
           <li>
             <PageFind />
           </li>
@@ -69,9 +70,9 @@ const isActive = (href) => {
               </li>
             ))}
 
-          <li>
+{/*           <li>
             <ColorSwitch client:idle />
-          </li>
+          </li> */}
 
           <li class="md:hidden">
             <NavMobile
@@ -81,7 +82,7 @@ const isActive = (href) => {
               <Icon name="menu-solid" class="h-10 w-10" slot="menu" />
 
               <Icon name="close" class="h-10 w-10" slot="close" />
-              <Icon name="logo" class="w-full" slot="logo" />
+              <img src={logo.src} class="w-full" slot="logo" />{/* <Icon name="logo" class="w-full" slot="logo" />  */}
               <ul
                 class="mobile-links nav-links mt-3 w-full text-center"
                 slot="links"
