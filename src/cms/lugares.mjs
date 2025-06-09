@@ -7,7 +7,7 @@ export const lugares = {
   label: t("lugares"),
   format: "frontmatter",
   extension: "mdx",
-  icon: "portfolio",
+  icon: "map",
   create: true,
   editor: {
     preview: false,

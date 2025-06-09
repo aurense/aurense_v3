@@ -1,16 +1,16 @@
 {
-  "name": "nebulix",
+  "name": "aurense",
   "type": "module",
   "license": "CC BY-ND 4.0",
   "version": "0.1.9",
   "keywords": [
-    "astro",
-    "Static CMS",
-    "Vue 3",
-    "mdx",
-    "markdown"
+    "aurense",
+    "El Oro",
+    "restaurantes",
+    "turismo",
+    "pueblo magico"
   ],
-  "description": "Fast & Green Theme Based on Astro + Static CMS. A Universe of Possibilities: Blogs, Portfolios, Menus, Webshop & Beyond",
+  "description": "Compartimos la Belleza, historia, cultura y gastronomía de El Oro, Estado de México. Un Pueblo Mágico lleno de historia, arquitectura y tradiciones.",
   "scripts": {
     "postbuild": "pagefind --site dist --output-path dist/_pagefind",
     "dev": "astro dev",
@@ -19,7 +19,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "cms-proxy-server": "npx @staticcms/proxy-server",
-    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=en CURRENCY=USD UNITS=metric NODE_VERSION=18 SNIPCART_KEY=ZDVjZmQwYmUtMzNlYy00OGEyLTkxMTItMTg4YTI5NGQxN2I3NjM4MjgzOTQyMzA2MTM1NjI1 astro dev"
+    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=es CURRENCY=MXN UNITS=metric NODE_VERSION=18 SNIPCART_KEY=ZDVjZmQwYmUtMzNlYy00OGEyLTkxMTItMTg4YTI5NGQxN2I3NjM4MjgzOTQyMzA2MTM1NjI1 astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
